@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #fbfafb;
+	font-weight: 600;
+	font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.wrapper {
+	position: relative;
+	border: 3px solid red;
+	background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.game-hud {
+	display: flex;
+	width: 960px;
+	border: 5px solid hsl(217, 16%, 45%);
+	border-radius: 15px;
+	padding: 20px;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 50px;
+	margin-bottom: 150px;
+
+	.game-mode__title {
+		img {
+			display: block;
+			height: 150px;
+		}
+	}
+
+	.game-score {
+		height: 180px;
+		width: 180px;
+		border-radius: 25px;
+		background-color: #fbfafb;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+
+		h1 {
+			color: #56536b;
+			font-size: 62px;
+			font-weight: 700;
+		}
+
+		h3 {
+			color: #555fad;
+			text-transform: uppercase;
+			font-size: 32px;
+		}
+	}
+}
+
+.hands {
+	position: relative;
+	width: 676px;
+	height: 530px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-image: url(/images/bg-triangle.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.rock {
+	margin-right: 20px;
+}
+
+.paper {
+	margin-left: 20px;
+}
+
+.hands .hand {
+	cursor: pointer;
+	transition: all 0.25s;
+
+	img {
+		width: 250px;
+	}
+}
+
+.hands .hand:hover {
+	transform: translate3d(0px, -10px, 0px);
+}
+
+.contest {
+	margin: 0 auto;
+	margin-top: 150px;
+	width: 1200px;
+	display: none;
+	align-items: center;
+	justify-content: space-between;
+
+	img {
+		width: 280px;
+	}
+}
+
+.contest > div {
+	flex: 1;
+}
+
+.user-hand,
+.cpu-hand {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	h1 {
+		color: #fbfafb;
+		font-size: 38px;
+		text-transform: uppercase;
+		margin-bottom: 50px;
+	}
+}
+
+.referee {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	h1 {
+		color: #fbfafb;
+		font-size: 56px;
+		text-transform: uppercase;
+		margin-bottom: 50px;
+	}
+
+	.newGame {
+		font-size: 35px;
+		text-transform: uppercase;
+		background-color: #fbfafb;
+		cursor: pointer;
+		color: #56536b;
+		padding: 20px 40px;
+		border-radius: 8px;
+		transition: all 0.25s;
+	}
+}
+
+.referee .newGame:hover {
+	transform: translate3d(0px, -5px, 0px);
+	background-color: bisque;
+}
+
+.rules-btn {
+	border: 3px solid hsl(217, 16%, 45%);
+	padding: 20px 60px;
+	font-size: 26px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+	border-radius: 8px;
+	position: absolute;
+	right: 50px;
+	bottom: 50px;
+	cursor: pointer;
+	transition: all 0.25s;
+}
+
+.rules-btn:hover {
+	transform: translate3d(0px, -5px, 0px);
+	background-color: hsla(217, 16%, 45%, 0.679);
+}
+
+.rules-container {
+	position: absolute;
+
+	width: 60%;
+	height: 60%;
+	top: 100%;
+	bottom: 100%;
+	margin: auto;
+	display: none;
+	align-items: center;
+	justify-content: center;
+
+	.default-rules {
+		height: 620px;
+		width: 620px;
+		background-color: #fbfafb;
+		object-fit: contain;
+		display: flex;
+		flex-direction: column;
+
+		border-radius: 10px;
+
+		.rules-header {
+			color: #56536b;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 20px 40px;
+			margin-bottom: 50px;
+			margin-top: 15px;
+
+			h3 {
+				font-size: 32px;
+				text-transform: uppercase;
+			}
+
+			.rules-close {
+				cursor: pointer;
+				width: 40px;
+				height: 40px;
+				display: flex;
+				transition: all 0.25s;
+
+				i {
+					font-size: 36px;
+					display: block;
+					margin: 0 auto;
+					color: hsl(218, 20%, 66%);
+				}
+			}
+
+			.rules-close:hover i {
+				color: hsl(217, 16%, 45%);
+			}
+		}
+
+		img {
+			width: 80%;
+			margin: 0 auto;
+		}
+	}
+
+	.bonus-rules {
+		display: none;
+	}
+}

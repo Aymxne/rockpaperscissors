@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+			integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="/style.css" />
+		<title>Rock Paper Scissors PLUS</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- Game Score Board -->
+			<div class="game-hud">
+				<div class="game-mode__title">
+					<img src="/images/logo.svg" alt="" />
+				</div>
+				<div class="game-score">
+					<h3>Score</h3>
+					<h1 class="score-text">0</h1>
+				</div>
+			</div>
+
+			<!-- Main Game -->
+
+			<div class="hands">
+				<div class="rock hand">
+					<img src="/Rock.png" alt="" onclick="pickUserHand('rock')" />
+				</div>
+				<div class="paper hand">
+					<img src="/Paper.png" alt="" onclick="pickUserHand('paper')" />
+				</div>
+				<div class="scissors hand">
+					<img src="/Scissors.png" alt="" onclick="pickUserHand('scissors')" />
+				</div>
+			</div>
+
+			<!-- Contest -->
+			<div class="contest">
+				<div class="user-hand">
+					<h1>YOU PICKED</h1>
+					<div class="handImageContainer">
+						<img id="userPickImage" src="/Rock.png" alt="" />
+					</div>
+				</div>
+
+				<!-- Result -->
+				<div class="referee">
+					<div class="decision">
+						<h1>YOU WIN!</h1>
+					</div>
+					<div class="newGame" onclick="restartGame()">Play again</div>
+				</div>
+
+				<!-- Computer Hand -->
+				<div class="cpu-hand">
+					<h1>The house picked</h1>
+					<div class="handImageContainer">
+						<img id="cpuPickImage" src="/Paper.png" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="rules-btn" onclick="showRules()">rules</div>
+			<div class="rules-container">
+				<div class="default-rules">
+					<div class="rules-header">
+						<h3>Rules - BONUS</h3>
+						<div class="rules-close" onclick="hideRules()">
+							<i class="fas fa-times"></i>
+						</div>
+					</div>
+					<img src="/images/image-rules.svg" alt="" />
+				</div>
+				<div class="bonus-rules">
+					<img src="/images/image-rules-bonus.svg" alt="" />
+				</div>
+			</div>
+		</div>
+
+		<script src="/app.js"></script>
+		<script src="/gameui.js"></script>
+	</body>
+</html>
