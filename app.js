@@ -1,8 +1,8 @@
 // Key Value
 const handOptions = {
-	rock: "/Rock.png",
-	paper: "/Paper.png",
-	scissors: "/Scissors.png",
+	rock: "Rock.png",
+	paper: "Paper.png",
+	scissors: "Scissors.png",
 };
 
 let SCORE = 0;
